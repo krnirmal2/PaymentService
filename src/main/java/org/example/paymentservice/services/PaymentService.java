@@ -2,10 +2,14 @@ package org.example.paymentservice.services;
 
 import com.razorpay.RazorpayException;
 import com.stripe.exception.StripeException;
+
+import lombok.Getter;
+
 import org.example.paymentservice.paymentgateway.PaymentGateway;
 import org.springframework.stereotype.Service;
 
 @Service
+@Getter
 public class PaymentService {
 
     //NOTE 14: we need the object of the payment gateway interface with the help of
@@ -24,5 +28,10 @@ public class PaymentService {
 
         // generate the payment link
         return paymentGateway.generatePaymentLink(id, amount, phoneNumber, orderId);
+    }
+
+    public Object generatePaymentLink(String orderId, Long amount, String phoneNumber, String orderId2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'generatePaymentLink'");
     }
 }
